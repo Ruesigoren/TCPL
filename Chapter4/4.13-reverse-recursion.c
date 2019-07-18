@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+main()
+{
+	char tmp[] = "hello world";
+	void reverse(char s[]);
+
+	reverse(tmp);
+}
+
+void reverse(char s[])
+{
+	void reverser(char s[], int i, int len);
+
+	reverser(s, 0, strlen(s));
+}
+
+void reverser(char s[], int i, int len)
+{
+	int c, j;
+
+	j = len - (i + 1);
+	if (i < j) {
+		c = s[i];
+		s[i] = s[j];
+		s[j] = c;
+		reverser(s, ++i, len);
+	}
+}
